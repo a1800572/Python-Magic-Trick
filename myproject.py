@@ -1,13 +1,12 @@
 import numpy as np
 import random
+import winsound
+import pandas as pd
 def main():
  while True:
     arr=np.random.choice(range(0, 100),21,replace=False).reshape(7,3)
-    #oikea arr = np.arange(21).reshape(7,3);
-    col1=arr[:,0]
-    col2=arr[:,1]
-    col3=arr[:,2]
-
+    #error sekoituksessa
+    #arr=pd.DataFrame(arr, columns=["col1","col2","col3"])
     print(arr)
     print("--------------")
     userin = str(input("which column has the number? "))
@@ -68,12 +67,15 @@ def main():
 #third
     if userin2 == "1":
         print("The number you are thinking is " + str(arr3[3,0]))
-
+        winsound.PlaySound("Audio/Laugh.wav", winsound.SND_ASYNC)
+        
     if userin2 == "2":
         print("The number you are thinking is " + str(arr3[3,1]))
-
+        winsound.PlaySound("Audio/Laugh.wav", winsound.SND_ASYNC)
+        
     if userin2 == "3":
         print("The number you are thinking is " + str(arr3[3,2]))
+        winsound.PlaySound("Audio/Laugh.wav", winsound.SND_ASYNC)
 
     choice = input("Would you like to try again? (Enter y for yes n for no) ")
 
